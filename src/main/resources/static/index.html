@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>항해 블로그</title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@500&display=swap" rel="stylesheet">
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+    <script src="/basic.js" ></script>
+
+
+
+</head>
+
+<body>
+<div class="background-header">
+
+</div>
+<div class="background-body">
+
+</div>
+<div class="wrap">
+    <div class="header" id="header">
+        <div id="login_logout">
+
+        </div>
+
+        <h2>항해블로그</h2>
+        <p>
+            블로그에 글을 적어주세요
+        </p>
+    </div>
+    <div class="area-write">
+        <input class="input" type="text" placeholder="제목" style="width: 538px" id="title">
+        <input class="input" type="password" placeholder="비밀번호" style="width: 538px" id="password">
+
+        <textarea class="field" placeholder="내용" name="content" id="content" cols="30"
+                  rows="10"></textarea>
+        <!--            <button class="btn btn-danger" onclick="writePost()">작성하기</button>-->
+        <img src="images/send.png" alt="" onclick="writePost()">
+    </div>
+    <div id="cards-box" class="area-read">
+
+    </div>
+</div>
+
+</body>
+
+</html>

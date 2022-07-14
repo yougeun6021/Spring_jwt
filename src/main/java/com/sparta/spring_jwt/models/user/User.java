@@ -1,6 +1,7 @@
 package com.sparta.spring_jwt.models.user;
 
 import com.sparta.spring_jwt.models.TimeStamped;
+import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;

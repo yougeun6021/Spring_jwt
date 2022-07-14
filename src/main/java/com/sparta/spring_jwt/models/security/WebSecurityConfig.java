@@ -45,8 +45,10 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     public void configure(AuthenticationManagerBuilder auth) {
         auth
+
                 .authenticationProvider(formLoginAuthProvider())
                 .authenticationProvider(jwtAuthProvider);
+
     }
 
     @Override
@@ -127,7 +129,6 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
         //블로그 글 API 허용
         skipPathList.add("GET,/api/posts/**");
-        skipPathList.add("POST,/api/posts/**");
         skipPathList.add("PUT,/api/posts/**");
         skipPathList.add("DELETE,/api/posts/**");
 
@@ -156,9 +157,19 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
         return filter;
     }
 
+
+
     @Bean
     @Override
     public AuthenticationManager authenticationManagerBean() throws Exception {
         return super.authenticationManagerBean();
     }
+
+
+
+
+
+
+
+
 }

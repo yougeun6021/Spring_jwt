@@ -11,6 +11,7 @@ import com.sparta.spring_jwt.models.security.UserDetailsImpl;
 import com.sparta.spring_jwt.service.PostService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -39,18 +40,15 @@ public class PostController {
 
 
     @PostMapping("/api/posts")
-    public Post getPosts(@RequestBody PostRequestDto postRequestDto,@AuthenticationPrincipal UserDetailsImpl userDetails){
-        System.out.println(userDetails.getUsername());
-        System.out.println(userDetails.getPassword());
-        try{
-            String username = userDetails.getUser().getUsername();
+    public Post getPosts(@RequestBody PostRequestDto postRequestDto, @AuthenticationPrincipal  UserDetailsImpl userDetails){
 
-            Post post = new Post(postRequestDto, username);
-            postRepository.save(post);
-            return post;
-        }catch (NullPointerException ex){
-            throw  new NullPointerException("로그인 후 사용하세요");
-        }
+
+        String username = userDetails.getUser().getUsername();
+        System.out.println(username);
+        Post post = new Post(postRequestDto, username);
+        postRepository.save(post);
+        return post;
+
 
     }
 

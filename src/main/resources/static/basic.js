@@ -253,7 +253,6 @@ function writePost() {
 
     let title = $('#title').val();
 
-
     let password = $('#password').val();
 
     // 2. 작성한 메모가 올바른지 isValidcontent 함수를 통해 확인합니다.
